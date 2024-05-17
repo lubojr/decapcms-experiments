@@ -37,3 +37,7 @@ collections:
         label: Categories
         widget: CustomCategoriesWidget
         separator: __bla__
+      - name: categorieslocal
+        label: Categories Local
+        widget: categoriesLocal
+        separator: "..."

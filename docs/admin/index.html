@@ -15,6 +15,44 @@
     <script type="text/javascript">
       CMS.registerWidget('MyCustomTestWidget', window.StarterControl, window.StarterPreview);
     </script>
+    <script>
+      var CCategoriesControl = createClass({
+        handleChange: function(e) {
+          const separator = this.props.field.get('separator', ', ')
+          this.props.onChange(e.target.value.split(separator).map((e) => e.trim()));
+        },
+      
+        render: function() {
+          const separator = this.props.field.get('separator', ', ');
+          var value = this.props.value;
+          return h('input', {
+            id: this.props.forID,
+            className: this.props.classNameWrapper,
+            type: 'text',
+            value: value ? value.join(separator) : '',
+            onChange: this.handleChange,
+          });
+        },
+      });
+      
+      var CCategoriesPreview = createClass({
+        render: function() {
+          return h('ul', {},
+            this.props.value.map(function(val, index) {
+              return h('li', {key: index}, val);
+            })
+          );
+        }
+      });
+      
+      var Sschema = {
+        properties: {
+          separator: { type: 'string' },
+        },
+      }
+      
+      CMS.registerWidget('categoriesLocal', CCategoriesControl, CCategoriesPreview, Sschema);
+    </script>
     <script src="inline-widget.js" type="text/javascript"></script>
   </body>
 </html>
