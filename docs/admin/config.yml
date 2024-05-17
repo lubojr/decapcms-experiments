@@ -4,7 +4,7 @@ backend:
   repo: lubojr/decapcms-experiments
   base_url: https://decap-cms-oauth-two.vercel.app
 publish_mode: editorial_workflow
-site_url: https://example.com
+site_url: https://decapcms-experiments.vercel.app/
 media_folder: docs/media
 
 collections:
