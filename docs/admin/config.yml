@@ -48,5 +48,19 @@ collections:
     create: true  # Allow users to create new documents
     slug: "{{slug}}"
     fields:  # The fields each document in this collection will have
-      - {label: "Title", name: "title", widget: "string"}
-      - {label: "is_valid", name: "Is valid", widget: "boolean"}
+      - {label: "ID", name: "id", widget: "string", pattern: ['.{3,}', "Must have at least 3 characters"]}
+      - {label: "title", name: "title", widget: "string"}
+      - label: "Providers"
+        name: "providers" # this is mapped to
+        widget: "list"
+        collapsed: true
+        summary: '{{fields.provider}}'
+        field: 
+          label: Provider
+          name: provider
+          widget: Object,
+          fields: 
+            - { label: Name, name: name, widget: string }
+            - { label: Description, name: description, widget: text }
+            - { label: Roles, name: roles, widget: list }
+            - { label: Url, name: url, widget: string }
