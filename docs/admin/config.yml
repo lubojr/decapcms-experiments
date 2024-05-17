@@ -54,13 +54,9 @@ collections:
         name: "providers" # this is mapped to
         widget: "list"
         collapsed: true
-        summary: '{{fields.provider}}'
-        field: 
-          label: Provider
-          name: provider
-          widget: object
-          fields: 
-            - { label: Name, name: name, widget: string }
-            - { label: Description, name: description, widget: text }
-            - { label: Roles, name: roles, widget: list }
-            - { label: Url, name: url, widget: string }
+        summary: '{{fields.name}}'
+        fields: 
+          - { label: Name, name: name, widget: string }
+          - { label: Description, name: description, widget: text }
+          - { label: Roles, name: roles, widget: list, required: false }
+          - { label: Url, name: url, widget: string, required: false }
