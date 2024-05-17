@@ -1,0 +1,19 @@
+backend:
+  name: github
+  branch: main
+  repo: lubojr/decapcms-experiments
+  base_url: https://decapcms-experiments.vercel.app/callback
+publish_mode: editorial_workflow
+site_url: https://example.com
+
+media_folder: media
+
+collections:
+  - name: "post"  # Used in URLs
+    label: "Post"  # Used in the UI
+    folder: "posts"  # The path to the post markdown files
+    create: true  # Allow users to create new documents
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:  # The fields each document in this collection will have
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Body", name: "body", widget: "markdown"}
