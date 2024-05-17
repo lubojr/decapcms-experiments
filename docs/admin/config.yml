@@ -5,8 +5,7 @@ backend:
   base_url: https://decap-cms-oauth-two.vercel.app
 publish_mode: editorial_workflow
 site_url: https://example.com
-
-media_folder: media
+media_folder: docs/media
 
 collections:
   - name: "post"  # Used in URLs
@@ -17,3 +16,16 @@ collections:
     fields:  # The fields each document in this collection will have
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Body", name: "body", widget: "markdown"}
+      - {
+          label: 'Publish Date',
+          name: 'date',
+          widget: 'datetime',
+          date_format: 'YYYY-MM-DD',
+          time_format: 'HH:mm',
+          format: 'YYYY-MM-DD HH:mm',
+        }
+      - label: 'Cover Image'
+        name: 'image'
+        widget: 'image'
+        required: false
+        tagname: ''
