@@ -41,3 +41,12 @@ collections:
         label: Categories Local
         widget: categoriesLocal
         separator: "..."
+  - name: "staccollections"  # Used in URLs
+    label: "STAC Collections"  # Used in the UI
+    folder: "stac"  # The path to the post markdown files
+    format: "json"
+    create: true  # Allow users to create new documents
+    slug: "{{slug}}"
+    fields:  # The fields each document in this collection will have
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "is_valid", name: "Is valid", widget: "boolean"}
