@@ -11,7 +11,7 @@ media_folder: media
 collections:
   - name: "post"  # Used in URLs
     label: "Post"  # Used in the UI
-    folder: "posts"  # The path to the post markdown files
+    folder: "docs"  # The path to the post markdown files
     create: true  # Allow users to create new documents
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:  # The fields each document in this collection will have
