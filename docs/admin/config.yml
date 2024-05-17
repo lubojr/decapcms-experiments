@@ -33,3 +33,7 @@ collections:
       - name: test_widget
         label: Test Widget
         widget: MyCustomTestWidget
+      - name: categories
+        label: Categories
+        widget: CustomCategoriesWidget
+        separator: __bla__
