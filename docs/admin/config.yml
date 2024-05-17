@@ -6,7 +6,8 @@ backend:
 publish_mode: editorial_workflow
 site_url: https://decapcms-experiments.vercel.app/
 media_folder: docs/media
-
+public_folder: "/media"
+search: false
 collections:
   - name: "post"  # Used in URLs
     label: "Post"  # Used in the UI
