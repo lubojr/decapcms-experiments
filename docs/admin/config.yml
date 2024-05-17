@@ -16,7 +16,7 @@ collections:
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:  # The fields each document in this collection will have
       - {label: "Title", name: "title", widget: "string"}
-      - {label: "Body", name: "body", widget: "markdown"}
+      - {label: "Body", name: "body", widget: "markdown"} # HAS to be named body BUT can have CUSTOM COMPONENTS
       - {
           label: 'Publish Date',
           name: 'date',
@@ -30,3 +30,6 @@ collections:
         widget: 'image'
         required: false
         tagname: ''
+      - name: test_widget
+        label: Test Widget
+        widget: MyCustomTestWidget
