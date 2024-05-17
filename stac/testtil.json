@@ -1,0 +1,17 @@
+{
+  "id": "blam",
+  "title": "testtil",
+  "providers": [
+    {
+      "provider": {
+        "name": "testname",
+        "description": "testdescription",
+        "roles": [
+          "role1",
+          "role2"
+        ],
+        "url": "myurl"
+      }
+    }
+  ]
+}
