@@ -7,7 +7,7 @@ backend:
   squash_merges: true
 publish_mode: editorial_workflow
 site_url: https://decapcms-experiments.vercel.app/
-logo_url: https://hub.earthcode.eox.at/services/eoxhub-gateway/earthcode-testing/user-dashboard/assets/img/eoxhub.svg
+logo_url: https://brand-core-eox-hub-eoxhub-portal-24023d6fe5cc3afbba8510c6d5f0ab.pages.eox.at/assets/img/eoxhub.svg
 media_folder: docs/media
 public_folder: "/media"
 search: false
