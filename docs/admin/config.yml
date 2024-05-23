@@ -12,59 +12,34 @@ media_folder: docs/media
 public_folder: "/media"
 search: false
 collections:
-  - name: "post"  # Used in URLs
-    label: "Post"  # Used in the UI
-    folder: "docs"  # The path to the post markdown files
-    create: true  # Allow users to create new documents
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
-    fields:  # The fields each document in this collection will have
-      - {label: "Title", name: "title", widget: "string"}
-      - {label: "Body", name: "body", widget: "markdown"} # HAS to be named body BUT can have CUSTOM COMPONENTS
-      - {
-          label: 'Publish Date',
-          name: 'date',
-          widget: 'datetime',
-          date_format: 'YYYY-MM-DD',
-          time_format: 'HH:mm',
-          format: 'YYYY-MM-DD HH:mm',
-        }
-      - label: 'Cover Image'
-        name: 'image'
-        widget: 'image'
-        required: false
-        tagname: ''
-      - name: test_widget
-        label: Test Widget
-        widget: MyCustomTestWidget
-      - name: categories
-        label: Categories
-        widget: CustomCategoriesWidget
-        separator: __bla__
-      - name: categorieslocal
-        label: Categories Local
-        widget: categoriesLocal
-        separator: "..."
-  - name: "staccollections"  # Used in URLs
-    label: "STAC Collections"  # Used in the UI
-    folder: "stac"  # The path to the post markdown files
+  - name: "osc-eo-mission"  # Used in URLs
+    label: "EO Missions"  # Used in the UI
+    folder: "eo-missions"  # The path to the post markdown files
+    nested:
+      depth: 100 # max depth to show in the collection tree
+      summary: '{{title}}' # optional summary for a tree node, defaults to the inferred title field
     format: "json"
     create: true  # Allow users to create new documents
     slug: "{{slug}}"
     fields:  # The fields each document in this collection will have
       - {label: "ID", name: "id", widget: "string", pattern: ['.{3,}', "Must have at least 3 characters"]}
       - {label: "title", name: "title", widget: "string"}
-      - label: "Providers"
-        name: "providers" # this is mapped to
-        widget: "list"
-        collapsed: true
-        summary: '{{fields.name}}'
-        fields: 
-          - { label: Name, name: name, widget: string }
-          - { label: Description, name: description, widget: text }
-          - { label: Roles, name: roles, widget: list, required: false }
-          - { label: Url, name: url, widget: string, required: false }
-  - name: "osc-projects"  # Used in URLs
-    label: "OSC Projects"  # Used in the UI
+      - { label: Description, name: description, widget: "markdown" }
+  - name: "osc-products"  # Used in URLs
+    label: "Products"  # Used in the UI
+    folder: "products"  # The path to the post markdown files
+    nested:
+      depth: 100 # max depth to show in the collection tree
+      summary: '{{title}}' # optional summary for a tree node, defaults to the inferred title field
+    format: "json"
+    create: true  # Allow users to create new documents
+    slug: "{{slug}}"
+    fields:  # The fields each document in this collection will have
+      - {label: "ID", name: "id", widget: "string", pattern: ['.{3,}', "Must have at least 3 characters"]}
+      - {label: "title", name: "title", widget: "string"}
+      - { label: Description, name: description, widget: "markdown" }
+  - name: "osc-project"  # Used in URLs
+    label: "Projects"  # Used in the UI
     folder: "projects"  # The path to the post markdown files
     nested:
       depth: 100 # max depth to show in the collection tree
@@ -75,7 +50,33 @@ collections:
     fields:  # The fields each document in this collection will have
       - {label: "ID", name: "id", widget: "string", pattern: ['.{3,}', "Must have at least 3 characters"]}
       - {label: "title", name: "title", widget: "string"}
-      - { label: Description, name: description, widget: text }
+      - { label: Description, name: description, widget: "markdown" }
       - { label: Status, name: osc:status, widget: text }
       - { label: Themes, name: osc:themes, widget: select, options: ["Atmosphere", "Cryosphere", "Land", "Magnetosphere_Ionosphere", "Oceans", "Solid Earth"], multiple: true, min: 1 }
+  - name: "osc-themes"  # Used in URLs
+    label: "Themes"  # Used in the UI
+    folder: "themes"  # The path to the post markdown files
+    nested:
+      depth: 100 # max depth to show in the collection tree
+      summary: '{{title}}' # optional summary for a tree node, defaults to the inferred title field
+    format: "json"
+    create: true  # Allow users to create new documents
+    slug: "{{slug}}"
+    fields:  # The fields each document in this collection will have
+      - {label: "ID", name: "id", widget: "string", pattern: ['.{3,}', "Must have at least 3 characters"]}
+      - {label: "title", name: "title", widget: "string"}
+      - { label: Description, name: description, widget: "markdown" }
+  - name: "osc-variables"  # Used in URLs
+    label: "Variables"  # Used in the UI
+    folder: "variables"  # The path to the post markdown files
+    nested:
+      depth: 100 # max depth to show in the collection tree
+      summary: '{{title}}' # optional summary for a tree node, defaults to the inferred title field
+    format: "json"
+    create: true  # Allow users to create new documents
+    slug: "{{slug}}"
+    fields:  # The fields each document in this collection will have
+      - {label: "ID", name: "id", widget: "string", pattern: ['.{3,}', "Must have at least 3 characters"]}
+      - {label: "title", name: "title", widget: "string"}
+      - { label: Description, name: description, widget: "markdown" }
       
