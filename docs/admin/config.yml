@@ -4,7 +4,7 @@ backend:
   repo: ESA-EarthCODE/open-science-catalog-metadata-testing
   base_url: https://decap-cms-oauth-two.vercel.app
   open_authoring: true
-publish_mode: simple
+publish_mode: editorial_workflow
 site_url: https://decapcms-experiments.vercel.app/
 media_folder: docs/media
 public_folder: "/media"
