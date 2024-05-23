@@ -74,3 +74,6 @@ collections:
       - {label: "ID", name: "id", widget: "string", pattern: ['.{3,}', "Must have at least 3 characters"]}
       - {label: "title", name: "title", widget: "string"}
       - { label: Description, name: description, widget: text }
+      - { label: Status, name: osc:status, widget: text }
+      - { label: Themes, name: osc:themes, widget: select, options: ["Atmosphere", "Cryosphere", "Land", "Magnetosphere_Ionosphere", "Oceans", "Solid Earth"], multiple: true, min: 1 }
+      
