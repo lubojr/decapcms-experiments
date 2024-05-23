@@ -5,9 +5,9 @@ backend:
   base_url: https://decap-cms-oauth-two.vercel.app
   open_authoring: true
   squash_merges: true
-  logo_url: https://hub.earthcode.eox.at/services/eoxhub-gateway/earthcode-testing/user-dashboard/assets/img/eoxhub.svg
 publish_mode: editorial_workflow
 site_url: https://decapcms-experiments.vercel.app/
+logo_url: https://hub.earthcode.eox.at/services/eoxhub-gateway/earthcode-testing/user-dashboard/assets/img/eoxhub.svg
 media_folder: docs/media
 public_folder: "/media"
 search: false
